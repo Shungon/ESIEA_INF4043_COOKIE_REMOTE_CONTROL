@@ -8,52 +8,30 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 
-public class remote  {
-
-    private JButton channelBeforeButton;
-    private JButton plageBeforeButton;
-    private JCheckBox TVMuteCheckBox;
-    private JButton nextPlageButton;
-    private JCheckBox radioMuteCheckBox;
-    private JButton channelAfterButton;
-    private JSlider RadioVolume;
-    private JSlider TVvolume;
-    private JButton radioButton;
-    private JButton TVButton;
-    private JTextField onTV;
-    private JTextField onRadio;
-
-
-    public static void main(String[] args) {
-        JFrame window = new JFrame();
-
-                window.setTitle("cookie remote control");
-                window.setSize(400, 100);
-                window.setLocationRelativeTo(null);
-                window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                window.setVisible(true);
-
-            }
-    public remote(){
-        radioButton.addActionListener(new ButtonClicked(radioButton.getText()));
-        TVButton.addActionListener(new ButtonClicked(TVButton.getText()));
-        channelAfterButton.addActionListener(new ButtonClicked(channelAfterButton.getText()));
-        channelBeforeButton.addActionListener(new ButtonClicked(channelBeforeButton.getText()));
-            nextPlageButton.addActionListener(new ButtonClicked(nextPlageButton.getText()));
-        plageBeforeButton.addActionListener(new ButtonClicked(plageBeforeButton.getText()));
-        radioMuteCheckBox.addActionListener(new ButtonClicked(radioMuteCheckBox.getText()));
-        TVMuteCheckBox.addActionListener(new ButtonClicked(TVMuteCheckBox.getText()));
+  public remote(){
+        radioButton.addActionListener(new PowerButtonClicked(radioButton.getText()));
+        TVButton.addActionListener(new PowerButtonClicked(TVButton.getText()));
+        channelAfterButton.addActionListener(new ChannelButtonClicked(channelAfterButton.getText()));
+        channelBeforeButton.addActionListener(new ChannelButtonClicked(channelBeforeButton.getText()));
+        nextPlageButton.addActionListener(new PlageButtonClicked(nextPlageButton.getText()));
+            plageBeforeButton.addActionListener(new PlageButtonClicked(plageBeforeButton.getText()));
+        radioMuteCheckBox.addActionListener(new MuteButtonClicked(radioMuteCheckBox.getText()));
+        TVMuteCheckBox.addActionListener(new MuteButtonClicked(TVMuteCheckBox.getText()));
+        radioVolUpButton.addActionListener(new VolButtonClicked(radioVolUpButton.getText()));
+        radioVolDownButton.addActionListener(new VolButtonClicked(radioVolDownButton.getText()));
+        TVVolDownButton.addActionListener(new VolButtonClicked(TVVolDownButton.getText()));
+        TVvolUpButton.addActionListener(new VolButtonClicked(TVvolUpButton.getText()));
     }
 
-    private class ButtonClicked implements ActionListener{
+    private class PowerButtonClicked implements ActionListener{
         private String value;
-        public ButtonClicked(String value){
+        public PowerButtonClicked(String value){
             this.value=value;
         }
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            if (radioButton.) {
+            if (radioButton.addActionListener()) {
                 value = "Radio on";
                 onRadio.setText(value);
             }
@@ -63,3 +41,43 @@ public class remote  {
             }
         }
     }
+    private class VolButtonClicked implements ActionListener{
+        private String value;
+        this.value = value;
+        @Override
+        public void actionPerformed(ActionEvent e) {
+
+        }
+
+    }
+    private class MuteButtonClicked implements ActionListener{
+        private String mute;
+        this.mute=mute;
+
+        @Override
+        public void actionPerformed(ActionEvent e){
+
+        }
+    }
+    private class PlageButtonClicked implements ActionListener {
+        private String value;
+        this.value =value;
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+
+        }
+    }
+
+    private class ChannelButtonClicked implements ActionListener {
+        private String value;
+        this.value =value;
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+
+        }
+    }
+    
+
+}
