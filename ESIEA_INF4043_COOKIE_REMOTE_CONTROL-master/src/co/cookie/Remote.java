@@ -25,6 +25,7 @@ public class remote  {
     private JPanel remoteView;
 
 
+
     public static void main(String[] args) {
         JFrame window = new JFrame("Cookie Remote Control");
 
@@ -34,76 +35,82 @@ public class remote  {
                 window.setVisible(true);
 
             }
-    public remote(){
-        radioButton.addActionListener(new PowerButtonClicked(radioButton.getText()));
-        TVButton.addActionListener(new PowerButtonClicked(TVButton.getText()));
-        channelAfterButton.addActionListener(new ChannelButtonClicked(channelAfterButton.getText()));
-        channelBeforeButton.addActionListener(new ChannelButtonClicked(channelBeforeButton.getText()));
-        nextPlageButton.addActionListener(new PlageButtonClicked(nextPlageButton.getText()));
-            plageBeforeButton.addActionListener(new PlageButtonClicked(plageBeforeButton.getText()));
-        radioMuteCheckBox.addActionListener(new MuteButtonClicked(radioMuteCheckBox.getText()));
-        TVMuteCheckBox.addActionListener(new MuteButtonClicked(TVMuteCheckBox.getText()));
-        radioVolUpButton.addActionListener(new VolButtonClicked(radioVolUpButton.getText()));
-        radioVolDownButton.addActionListener(new VolButtonClicked(radioVolDownButton.getText()));
-        TVVolDownButton.addActionListener(new VolButtonClicked(TVVolDownButton.getText()));
-        TVvolUpButton.addActionListener(new VolButtonClicked(TVvolUpButton.getText()));
-    }
+    public remote() {
 
-    private class PowerButtonClicked implements ActionListener{
-        private String value;
-        public PowerButtonClicked(String value){
-            this.value=value;
-        }
 
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            if (radioButton.addActionListener()) {
-                value = "Radio on";
-                onRadio.setText(value);
+        radioButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                onRadio.setText("Radio on ! ");
             }
-            else if (TVButton.addActionListener()) {
-                value = "TV is on";
-                onTV.setText(value);
+        });
+        TVButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                onTV.setText("TV on !");
             }
-        }
+        });
+        channelAfterButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                onTV.setText("you are on the next channel");
+            }
+        });
+        channelBeforeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                onTV.setText("you are on the channel before");
+            }
+        });
+        nextPlageButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                onRadio.setText("That's the next Station");
+            }
+        });
+        plageBeforeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                onRadio.setText("That's the radio before yours ;)");
+            }
+        });
+        radioMuteCheckBox.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                onRadio.setText("You've muted the radio");
+            }
+        });
+        TVMuteCheckBox.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                onTV.setText("You've muted your TV");
+            }
+        });
+        radioVolUpButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                onRadio.setText("Volume is up, maybe too loud ? ");
+            }
+        });
+        radioVolDownButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                onRadio.setText("Are you sure you can hear it ?");
+            }
+        });
+        TVVolDownButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                onTV.setText("TV's volume up");
+            }
+        });
+        TVvolUpButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                onTV.setText("TV's volume is down");
+            }
+        });
     }
-    private class VolButtonClicked implements ActionListener{
-        private String value;
-        this.value = value;
-        @Override
-        public void actionPerformed(ActionEvent e) {
 
-        }
-
-    }
-    private class MuteButtonClicked implements ActionListener{
-        private String mute;
-        this.mute=mute;
-
-        @Override
-        public void actionPerformed(ActionEvent e){
-
-        }
-    }
-    private class PlageButtonClicked implements ActionListener {
-        private String value;
-        this.value =value;
-
-        @Override
-        public void actionPerformed(ActionEvent e) {
-
-        }
-    }
-
-    private class ChannelButtonClicked implements ActionListener {
-        private String value;
-        this.value =value;
-
-        @Override
-        public void actionPerformed(ActionEvent e) {
-
-        }
-    }
 
 
 }
