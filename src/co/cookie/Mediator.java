@@ -7,9 +7,14 @@ public class Mediator
 {
     private String lastAction;
 
-    Mediator()
+    public Mediator()
     {
         lastAction = "nothing to be seen";
+    }
+
+    public String getlastAction()
+    {
+        return lastAction;
     }
 
     public void turn_off_tv(Tv tv) {

@@ -1,7 +1,5 @@
 package co.cookie;
 
-import java.util.List;
-
 /**
  * Created by farsight on 20/01/17.
  */

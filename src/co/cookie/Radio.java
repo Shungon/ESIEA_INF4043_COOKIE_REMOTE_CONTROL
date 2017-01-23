@@ -11,7 +11,7 @@ public class Radio implements Actions
     private int channel;
     private int volume;
 
-    Radio()
+    public Radio()
     {
         this.state = false;
         this.channel = 1;
@@ -72,5 +72,30 @@ public class Radio implements Actions
     @Override
     public void turn_off() {
         this.state = false;
+    }
+
+    public Boolean getState() {
+        return state;
+    }
+
+    public int getChannel()
+    {
+        return channel;
+    }
+
+    public void setChannel(int newValue)
+    {
+        channel = newValue;
+    }
+
+    public int getVolume()
+    {
+        return volume;
+    }
+
+
+    public void setVolume(int newValue)
+    {
+        volume = newValue;
     }
 }
