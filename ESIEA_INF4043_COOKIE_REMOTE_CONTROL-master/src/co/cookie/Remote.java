@@ -1,5 +1,3 @@
-
-import com.sun.deploy.nativesandbox.NativeSandboxBroker;
 import com.sun.deploy.panel.NetworkSettingsDialog;
 import javafx.scene.control.RadioButton;
 
@@ -8,7 +6,35 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 
-  public remote(){
+public class remote  {
+
+    private JButton channelBeforeButton;
+    private JButton plageBeforeButton;
+    private JCheckBox TVMuteCheckBox;
+    private JButton nextPlageButton;
+    private JCheckBox radioMuteCheckBox;
+    private JButton channelAfterButton;
+    private JButton radioButton;
+    private JButton TVButton;
+    private JTextField onTV;
+    private JTextField onRadio;
+    private JButton radioVolUpButton;
+    private JButton radioVolDownButton;
+    private JButton TVvolUpButton;
+    private JButton TVVolDownButton;
+    private JPanel remoteView;
+
+
+    public static void main(String[] args) {
+        JFrame window = new JFrame("Cookie Remote Control");
+
+                window.setContentPane( new remote().remoteView);
+                window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                window.pack();
+                window.setVisible(true);
+
+            }
+    public remote(){
         radioButton.addActionListener(new PowerButtonClicked(radioButton.getText()));
         TVButton.addActionListener(new PowerButtonClicked(TVButton.getText()));
         channelAfterButton.addActionListener(new ChannelButtonClicked(channelAfterButton.getText()));
@@ -78,6 +104,6 @@ import java.awt.event.ActionListener;
 
         }
     }
-    
+
 
 }
